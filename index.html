@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Launch countdown timer</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
+  <link href="fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style> -->
+</head>
+
+<body>
+  <header>
+    <h2> We're launching soon</h2>
+  </header>
+  <main>
+    <section>
+      <div class="time">
+        <div class="timers"><span class="days time-p"></span><span class="timer-txt">Days</span></div>
+        <div class="timers"><span class="hours time-p"></span><span class="timer-txt">Hours</span></div>
+        <div class="timers"><span class="minutes time-p"></span><span class="timer-txt">Minutes</span></div>
+        <div class="timers"><span class="seconds time-p"></span><span class="timer-txt">Seconds</span></div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="icons">
+      <span class="icon"><a href="www.facebook.com" target="_blank" title="login to facebook"><i
+            class="fab fa-facebook"></i></a></span>
+      <span class="icon"><a href="#" title="visit pinerest"><i class="fab fa-pinterest"></i></a></span>
+      <span class="icon"><a href="#" title="visit instagram"><i class="fab fa-instagram"></i></a></span>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer"
+        title="frontend mentor">Frontend Mentor</a>.
+      Coded by <a href="#">Egbo Uchenna Paul</a>.
+    </div>
+  </footer>
+</body>
+<script>
+  //Set the date to count down to
+  var countdownDate = new Date("Jan 20, 2021 15:37:25").getTime();
+  const days = document.querySelector(".days");
+  const hours = document.querySelector(".hours");
+  const minutes = document.querySelector(".minutes");
+  const seconds = document.querySelector(".seconds");
+
+  // Update the count down ever 1 second
+  var x = setInterval(function () {
+
+    //Get today's date and time
+    let now = new Date().getTime();
+
+    //Find the distance between now and the count date
+    let diff = countdownDate - now;
+
+    //time calcuöations
+    let d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    let h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    let s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    days.textContent = d;
+    hours.textContent = h;
+    minutes.textContent = m;
+    seconds.textContent = s;
+
+  }, 1000);
+</script>
+
+</html>

@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: white;
+}
+
+html,
+body {
+  font-size: 14px;
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+}
+
+body {
+  background-color: hsl(236, 21%, 26%);
+  background-image: url(images/bg-stars.svg), url(images/pattern-hills.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin: 100px auto;
+  color: hsl(0, 0%, 100%);
+}
+
+.section {
+  text-align: center;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.timers {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2px;
+}
+
+.time-p {
+  /* display: inline-block; */
+  background-color: hsl(237, 18%, 59%);
+  color: hsl(345, 95%, 68%);
+  padding: 10px;
+  font-size: 30px;
+  margin: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.timer-txt {
+  text-align: center;
+  color: hsl(237, 18%, 59%);
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.icon {
+  font-size: 40px;
+  padding: 10px;
+}
+
+.icons {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 375px) {
+  body {
+    margin: 0 auto;
+  }
+
+  .time-p {
+    padding: 15px;
+    font-size: 50px;
+  }
+}
