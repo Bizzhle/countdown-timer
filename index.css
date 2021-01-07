@@ -16,7 +16,8 @@ body {
 body {
   background-color: hsl(236, 21%, 26%);
   background-image: url(images/bg-stars.svg), url(images/pattern-hills.svg);
-  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-repeat: repeat, no-repeat;
   background-position: top, bottom;
   display: -ms-grid;
   display: grid;
@@ -27,7 +28,7 @@ body {
 
 header {
   text-align: center;
-  margin: 100px auto;
+  margin: 100px auto 20px;
   color: hsl(0, 0%, 100%);
 }
 
@@ -38,7 +39,7 @@ header {
 .time {
   display: flex;
   justify-content: center;
-  flex-grow: 0;
+  
 }
 
 .timers {
@@ -49,13 +50,14 @@ header {
 
 .time-p {
   /* display: inline-block; */
+  
   background-color: hsl(237, 18%, 59%);
   color: hsl(345, 95%, 68%);
   padding: 10px;
-  font-size: 30px;
-  margin: 10px;
-  border: 1px solid red;
+  font-size: 40px;
+  margin: 0.4rem;
   border-radius: 5px;
+  text-align: center;
 }
 
 .timer-txt {
@@ -80,12 +82,20 @@ header {
 }
 
 @media (min-width: 375px) {
-  body {
-    margin: 0 auto;
+
+  header {
+    margin: 170px auto 20px;
   }
+  
+
+.time {
+  display: flex;
+  justify-content: center;
+}
 
   .time-p {
-    padding: 15px;
-    font-size: 50px;
+    flex-shrink: 1;
+    font-size: 4rem;
+    text-align: center;
   }
 }
